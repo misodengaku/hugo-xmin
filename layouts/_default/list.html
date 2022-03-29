@@ -2,19 +2,26 @@
 
 {{if not .IsHome }}
 <h1>{{ .Title | markdownify }}</h1>
+{{ else }}
+<div class="article-meta">
+  <h1><span class="title">{{ .Title | markdownify }}</span></h1>
+</div>
 {{ end }}
 
 {{ .Content }}
 
-<ul>
+<div>
   {{ $pages := .Pages }}
   {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
   {{ range (where $pages "Section" "!=" "") }}
-  <li>
+  <div>
     <span class="date">{{ .Date.Format "2006/01/02" }}</span>
     <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
-  </li>
+    <!-- {{ if .Params.featured_image }}
+    <img src="{{ .Params.featured_image }}" height="200px">
+    {{ end }} -->
+  </div>
   {{ end }}
-</ul>
+</div>
 
 {{ partial "footer.html" . }}

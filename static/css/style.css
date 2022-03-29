@@ -16,10 +16,18 @@ body {
 }
 .menu, .article-meta, footer { text-align: center; }
 .title { font-size: 1.1em; }
-footer a { text-decoration: none; }
+footer {
+  color: #686868;
+}
+footer a {
+  color: #686868 }
 hr {
   border-style: dashed;
   color: #ddd;
+}
+
+.author, .date {
+  text-align: right;
 }
 
 /* code */
@@ -33,7 +41,7 @@ code { background: #f9f9f9; }
 pre code { background: none; }
 
 /* misc elements */
-img, iframe, video { max-width: 100%; }
+img, iframe, video { max-width: 80%; }
 main { hyphens: auto; }
 blockquote {
   background: #f9f9f9;
