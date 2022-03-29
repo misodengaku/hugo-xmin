@@ -1,6 +1,8 @@
 {{ partial "header.html" . }}
 
-{{if not .IsHome }}
+{{ if eq .Kind "term" }}
+<h1>"{{ .Title | markdownify }}" カテゴリの記事</h1>
+{{ else if not .IsHome }}
 <h1>{{ .Title | markdownify }}</h1>
 {{ else }}
 <div class="article-meta">
@@ -10,18 +12,35 @@
 
 {{ .Content }}
 
-<div>
+<div class="link-container">
   {{ $pages := .Pages }}
-  {{ if .IsHome }}{{ $pages = .Site.RegularPages }}{{ end }}
+  {{ if .IsHome }}
+  <h2>記事</h2>{{ $pages = .Site.RegularPages }}{{ end }}
   {{ range (where $pages "Section" "!=" "") }}
-  <div>
-    <span class="date">{{ .Date.Format "2006/01/02" }}</span>
-    <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+  <div class="article-link">
+    <span class="list-date">{{ .Date.Format "2006/01/02" }}</span>
+    <span><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></span>
     <!-- {{ if .Params.featured_image }}
     <img src="{{ .Params.featured_image }}" height="200px">
     {{ end }} -->
   </div>
   {{ end }}
 </div>
+
+{{ if .IsHome }}
+  <div class="link-container">
+    <h2>カテゴリ</h2>
+
+    {{ with .Site.Taxonomies.categories }}
+    {{ range . }}
+    <div class="article-link">
+      <span>
+        <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+      </span>
+    </div>
+    {{ end }}
+    {{ end }}
+  </div>
+{{ end }}
 
 {{ partial "footer.html" . }}
