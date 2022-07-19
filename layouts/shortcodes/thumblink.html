@@ -1,0 +1,20 @@
+{{ .Scratch.Set "caption" (.Get "caption") }}
+{{ if (.Get "size")}}
+{{ .Scratch.Set "size" (.Get "size") }}
+{{ else }}
+{{ .Scratch.Set "size" "480x320" }}
+{{ end }}
+{{ .Scratch.Set "sizeArray" (split (.Scratch.Get "size") "x") }}
+{{ .Scratch.Set "image" (.Page.Resources.GetMatch (.Get "src")) }}
+{{ .Scratch.Set "fitOpts" ( printf "%s webp" (.Scratch.Get "size") ) }}
+{{ .Scratch.Set "thumb" ((.Scratch.Get "image").Fit (.Scratch.Get "fitOpts")) }}
+{{ .Scratch.Set "thumbWidth" ((.Scratch.Get "thumb").Width)}}
+{{ .Scratch.Set "thumbHeight" ((.Scratch.Get "thumb").Height)}}
+<figure>
+    <a href="{{ (.Scratch.Get "image").RelPermalink }}">
+        <img width="{{ .Scratch.Get "thumbWidth" }}" height="{{ .Scratch.Get "thumbHeight" }}" src="{{ (.Scratch.Get "thumb").RelPermalink }}">
+    </a>
+    <figcaption>
+        <p>{{ (.Scratch.Get "caption") }}</p>
+    </figcaption>
+</figure>
