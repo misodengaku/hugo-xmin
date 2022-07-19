@@ -17,6 +17,7 @@
   {{ if .IsHome }}
   <h2>記事</h2>{{ $pages = .Site.RegularPages }}{{ end }}
   {{ range (where $pages "Section" "!=" "") }}
+  {{ if (ne .Params.scope "private")}}
   <div class="article-link">
     <span class="list-date">{{ .Date.Format "2006/01/02" }}</span>
     <span><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></span>
@@ -24,6 +25,7 @@
     <img src="{{ .Params.featured_image }}" height="200px">
     {{ end }} -->
   </div>
+  {{ end }}
   {{ end }}
 </div>
 
