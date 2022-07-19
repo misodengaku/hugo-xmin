@@ -81,7 +81,7 @@ code { background: #f9f9f9; }
 pre code { background: none; }
 
 /* misc elements */
-img, iframe, video { max-width: 80%; }
+img, iframe, video { max-width: 80%; height: auto }
 main {
   hyphens: auto;
   width: 85vw;
