@@ -1,5 +1,4 @@
 body {
-  box-sizing: border-box;
   width: 95vw;
   max-width: 800px;
   margin-left: auto;
@@ -13,7 +12,11 @@ body {
   padding: 0;
   text-align: right;
 }
-.menu li { display: inline-block; }
+
+.menu li {
+  display: inline-block;
+}
+
 .article-meta {
   vertical-align: middle;
   text-decoration: none;
@@ -23,17 +26,21 @@ body {
   border-radius: 5px;
   text-align: center;
 }
+
 .link-container {
   margin-top: 1.6em;
   margin-bottom: 1.6em;
 }
+
 .meta-container {
   margin-bottom: 0.8em;
 }
+
 .link-container h2 {
   margin-top: 0em;
   margin-bottom: 0em;
 }
+
 .article-link {
   overflow: hidden;
   width: 80vw;
@@ -41,31 +48,56 @@ body {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+
 footer {
   text-align: center;
 }
-.title { font-size: 1.1em; }
-@media only screen and (max-width: 800px) {
-  .title { font-size: 6vw; }
+
+.title {
+  font-size: 1.1em;
 }
+
+@media only screen and (max-width: 800px) {
+  .title {
+    font-size: 6vw;
+  }
+  .article-link {
+    margin: 0.5em;
+    display: inline-grid;
+  }
+  pre {
+    margin-right: 2em;
+  }
+}
+
+.footnotes {
+  overflow-wrap: break-word;
+}
+
 footer {
   width: 80vw;
   max-width: 800px;
   color: #686868;
 }
+
 footer a {
-  color: #686868 }
+  color: #686868
+}
+
 hr {
   border-style: dashed;
   color: #ddd;
 }
 
-.single-author, .single-date, .single-categories, .single-tags {
+.single-author,
+.single-date,
+.single-categories,
+.single-tags {
   text-align: right;
 }
 
 .list-date {
-  display:inline-block;
+  display: inline-block;
   width: 8em;
   text-align: left;
 }
@@ -74,21 +106,39 @@ hr {
 pre {
   border: 1px solid #ddd;
   box-shadow: 5px 5px 5px #eee;
-  padding: 1em;
   overflow-x: auto;
+  padding: 1em;
+  color: #f8f8f2;
+  background-color: #272822;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
 }
-code { background: #f9f9f9; }
-pre code { background: none; }
+
+code {
+  background: #f9f9f9;
+}
+
+pre code {
+  background: none;
+}
 
 /* misc elements */
-img, iframe, video { max-width: 80%; height: auto }
+img,
+iframe,
+video {
+  max-width: 80%;
+  height: auto
+}
+
 main {
   hyphens: auto;
-  width: 85vw;
+  width: 95vw;
   max-width: 800px;
   margin-top: 1.6em;
   margin-bottom: 1.6em;
 }
+
 blockquote {
   background: #f9f9f9;
   border-left: 5px solid #ccc;
@@ -100,6 +150,18 @@ table {
   border-top: 1px solid #666;
   border-bottom: 1px solid #666;
 }
-table thead th { border-bottom: 1px solid #ddd; }
-th, td { padding: 5px; }
-thead, tfoot, tr:nth-child(even) { background: #eee; }
+
+table thead th {
+  border-bottom: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+thead,
+tfoot,
+tr:nth-child(even) {
+  background: #eee;
+}
