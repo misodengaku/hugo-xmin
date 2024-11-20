@@ -1,8 +1,7 @@
 body {
-  width: 95vw;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  width: auto;
+  /* max-width: 800px; */
+  margin: 0;
   padding: 1em;
   line-height: 1.5;
 }
@@ -21,7 +20,7 @@ body {
   vertical-align: middle;
   text-decoration: none;
   background: #eee;
-  max-width: 800px;
+  /* max-width: 800px; */
   padding: 0.8em 1.6em 1.6em;
   border-radius: 5px;
   text-align: center;
@@ -50,6 +49,7 @@ body {
 }
 
 footer {
+  margin: auto;
   text-align: center;
 }
 
@@ -61,10 +61,12 @@ footer {
   .title {
     font-size: 6vw;
   }
+
   .article-link {
     margin: 0.5em;
     display: inline-grid;
   }
+
   pre {
     margin-right: 2em;
   }
@@ -76,7 +78,7 @@ footer {
 
 footer {
   width: 80vw;
-  max-width: 800px;
+  /* max-width: 800px; */
   color: #686868;
 }
 
@@ -117,6 +119,7 @@ pre {
 
 code {
   background: #f9f9f9;
+  overflow-wrap: break-word;
 }
 
 pre code {
@@ -133,11 +136,17 @@ video {
 
 main {
   hyphens: auto;
-  width: 95vw;
-  max-width: 800px;
+  width: auto;
+  /* max-width: 800px; */
   margin-top: 1.6em;
   margin-bottom: 1.6em;
 }
+
+main a {
+  overflow-wrap: break-word;
+}
+
+
 
 blockquote {
   background: #f9f9f9;

@@ -1,7 +1,6 @@
 body {
-  font-family: "BIZ UDPGothic", "Meiryo", sans-serif;
+  font-family: "Inter", "BIZ UDPGothic", "Meiryo", sans-serif;
 }
 code {
-  font-family: "Lucida Console", monospace;
-  font-size: 85%;
+  font-family: "Consolas", monospace;
 }
