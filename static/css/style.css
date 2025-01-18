@@ -39,10 +39,15 @@ nav {
     max-width: 100%;
   }
 
-  padding: 0.8em 1.6em 1.6em;
+  padding: 0.8em 0 1.6em;
   margin: 0 auto;
   border-radius: 5px;
   text-align: center;
+}
+
+.article-meta h1 {
+  padding-left: 1.6em;
+  padding-right: 1.6em;
 }
 
 .link-container {
@@ -58,6 +63,8 @@ nav {
 
 .meta-container {
   margin-bottom: 0.8em;
+  padding-left: 1.6em;
+  padding-right: 1.6em;
 }
 
 .link-container h2 {
@@ -68,6 +75,7 @@ nav {
 .article-link {
   overflow: hidden;
   width: 95%;
+  margin: 0.5em 0 0.5em 0;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -80,6 +88,8 @@ footer {
 
 .title {
   font-size: 1.1em;
+  overflow: hidden;
+  word-break: auto-phrase;
 }
 
 @media only screen and (max-width: 800px) {
@@ -103,6 +113,7 @@ main {
   hyphens: auto;
   width: auto;
   margin: 1.6em auto 1.6em;
+  word-break: auto-phrase;
 
   max-width: 1280px;
   @media screen and (max-width: 1280px) {
